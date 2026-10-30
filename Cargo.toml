@@ -1,0 +1,22 @@
+[package]
+name = "capri-desktop"
+version = "0.5.0"
+edition = "2021"
+authors = ["mochiiwuff", "david1357"]
+description = "Capri Desktop Mate rewritten in Rust for Linux, Wayland & Tiling Window Managers"
+license = "PolyForm-Noncommercial-1.0.0"
+
+[dependencies]
+gtk = "0.18"
+gtk-layer-shell = "0.8"
+cairo-rs = "0.18"
+gdk = "0.18"
+gdk-pixbuf = "0.18"
+glib = "0.18"
+pango = "0.18"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tokio = { version = "1.40", features = ["full"] }
+rand = "0.8"
+anyhow = "1.0"
+clap = { version = "4.5", features = ["derive"] }

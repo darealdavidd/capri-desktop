@@ -1,0 +1,40 @@
+{
+  "codex": {
+    "name": "Codex",
+    "file": "hooks.json",
+    "dir": ".codex",
+    "ask": {
+      "en": "Want me to plug into Codex? One click, then restart Codex and trust my hooks when it asks.",
+      "fr": "Tu veux que je me branche sur Codex ? Un clic, puis relance Codex et autorise mes hooks quand il te le demande.",
+      "es": "¿Quieres que me conecte a Codex? Un clic, y luego reinicia Codex y autoriza mis hooks cuando te lo pida.",
+      "pt": "Quer que eu me conecte ao Codex? Um clique, depois reinicie o Codex e autorize meus hooks quando ele pedir.",
+      "ru": "Подключиться к Codex? Один клик, потом перезапусти Codex и разреши мои хуки, когда он спросит."
+    },
+    "after": {
+      "en": "Now restart Codex and trust my hooks when it asks. As soon as it does something, I’ll tell you.",
+      "fr": "Maintenant relance Codex et autorise mes hooks quand il te le demande. Dès qu’il fait quelque chose, je te le dis.",
+      "es": "Ahora reinicia Codex y autoriza mis hooks cuando te lo pida. En cuanto haga algo, te aviso.",
+      "pt": "Agora reinicie o Codex e autorize meus hooks quando ele pedir. Assim que ele fizer algo, eu te aviso.",
+      "ru": "Теперь перезапусти Codex и разреши мои хуки, когда он спросит. Как только он что-то сделает, я скажу."
+    }
+  },
+  "agy": {
+    "name": "Antigravity",
+    "file": "hooks.json",
+    "dir": ".gemini",
+    "ask": {
+      "en": "Want me to plug into Antigravity? One click, then start a new conversation in it.",
+      "fr": "Tu veux que je me branche sur Antigravity ? Un clic, puis lance une nouvelle conversation dedans.",
+      "es": "¿Quieres que me conecte a Antigravity? Un clic, y luego empieza una conversación nueva en él.",
+      "pt": "Quer que eu me conecte ao Antigravity? Um clique, depois comece uma conversa nova nele.",
+      "ru": "Подключиться к Antigravity? Один клик, потом начни в нём новый разговор."
+    },
+    "after": {
+      "en": "Now start a new conversation in Antigravity. As soon as it does something, I’ll tell you.",
+      "fr": "Maintenant lance une nouvelle conversation dans Antigravity. Dès qu’il fait quelque chose, je te le dis.",
+      "es": "Ahora empieza una conversación nueva en Antigravity. En cuanto haga algo, te aviso.",
+      "pt": "Agora comece uma conversa nova no Antigravity. Assim que ele fizer algo, eu te aviso.",
+      "ru": "Теперь начни новый разговор в Antigravity. Как только он что-то сделает, я скажу."
+    }
+  }
+}
