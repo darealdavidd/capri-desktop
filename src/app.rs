@@ -200,6 +200,11 @@ pub fn run(config: Config) -> Result<(), anyhow::Error> {
                 }
             } else if event.button() == 3 {
                 // Right click: Popup Context Menu
+                let wander = s.capri.wander;
+                let muted = s.voice.muted;
+                let scale = s.capri.scale;
+                drop(s);
+
                 if let Some(_win) = window_weak.upgrade() {
                     let state_clone = state.clone();
                     let menu = CapriMenu::build(
@@ -267,9 +272,9 @@ pub fn run(config: Config) -> Result<(), anyhow::Error> {
                         move || {
                             gtk::main_quit();
                         },
-                        s.capri.wander,
-                        s.voice.muted,
-                        s.capri.scale,
+                        wander,
+                        muted,
+                        scale,
                     );
                     menu.popup_at_pointer(Some(event));
                     return glib::Propagation::Stop;
@@ -315,12 +320,10 @@ pub fn run(config: Config) -> Result<(), anyhow::Error> {
     // Wayland Input Click-Through Region Update Function
     let update_input_region = {
         let window_weak = window.downgrade();
-        let state = state.clone();
 
-        move || {
+        move |s: &AppState| {
             if let Some(win) = window_weak.upgrade() {
                 if let Some(gdk_win) = win.window() {
-                    let s = state.borrow();
                     let region = cairo::Region::create();
 
                     // 1. Capri Bounding Box
@@ -454,7 +457,7 @@ pub fn run(config: Config) -> Result<(), anyhow::Error> {
             }
 
             // 7. Update input region for Wayland click-through
-            update_input_region();
+            update_input_region(s);
 
             glib::ControlFlow::Continue
         });
