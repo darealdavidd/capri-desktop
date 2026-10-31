@@ -2,6 +2,12 @@
 
 > A high-performance, Wayland-native Rust rewrite of [Capri Desktop Mate](https://github.com/mochiiwuff/capri-desktop) by **mochiiwuff**, purpose-built for Linux and Tiling Window Managers (Hyprland, Sway, River, etc.) with **zero X11 dependencies**.
 
+> [!WARNING]
+> **Project Status: Work in Progress / Buggy & Unfinished**
+> This is an experimental, early-stage native Rust & Wayland port. It is currently **unfinished and buggy** — there may be rendering glitches, compositor-specific quirks (e.g. Hyprland vs Sway vs River), or unpolished behaviors.
+>
+> 🤝 **Contributions Welcome**: Anyone interested in helping test, polish, or improve this port is very warmly encouraged to contribute in a professional and constructive way! Pull requests, bug reports, and architectural feedback are welcome.
+
 ---
 
 ## ⚡ Highlights
@@ -144,6 +150,17 @@ Configuration is automatically stored at `~/.config/capri/config.json`:
   "dnd": false
 }
 ```
+
+---
+
+## 🤝 Contributing & Known Issues
+
+This Rust port is in active initial development and is currently **unfinished and buggy**:
+- Testing across different Wayland compositors (Hyprland, Sway, River, Cosmic, KDE, GNOME) is ongoing.
+- Transparency and input pass-through behavior can vary depending on compositor layer-shell implementation.
+- Audio synthesis and assistant event hooks may need tuning.
+
+If you would like to help test, fix bugs, optimize rendering, or improve Wayland compositor compatibility, **contributions and feedback submitted in a professional, constructive manner are very welcome!** Feel free to open an issue or pull request.
 
 ---
 
