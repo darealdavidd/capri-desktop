@@ -4,7 +4,7 @@
 
 > [!WARNING]
 > **Project Status: Work in Progress / Buggy & Unfinished**
-> This is an experimental, early-stage native Rust & Wayland port. It is currently **unfinished and buggy** — there may be rendering glitches, compositor-specific quirks (e.g. Hyprland vs Sway vs River), or unpolished behaviors.
+> This is an experimental, early-stage native Rust & Wayland port. It is currently **unfinished and buggy** — there may be rendering glitches, compositor-specific quirks (e.g. Hyprland vs Sway vs River), or unpolished behaviors. I'm still learning :D
 >
 > 🤝 **Contributions Welcome**: Anyone interested in helping test, polish, or improve this port is very warmly encouraged to contribute in a professional and constructive way! Pull requests, bug reports, and architectural feedback are welcome.
 
