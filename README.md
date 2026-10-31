@@ -16,8 +16,8 @@
 - **Dynamic Click-Through**: Clicks pass directly through the transparent overlay to your underlying windows (terminals, editors, browsers) except when clicking directly on Capri, her dialogue bubble, or her biochip dock (`wl_surface_set_input_region`).
 - **Zero Electron Overhead**: Replaced the Node.js / Electron stack with a lean, compiled Rust binary that sips minimal RAM and CPU at 60 FPS.
 - **Zero X11 / Xlib**: Absolutely no legacy X11 dependencies.
-- **Integrated AI Assistant Hooks**:
-  - Direct integration with **Claude Code**, **Codex**, and **Antigravity**.
+- **Integrated Terminal & Workflow Hooks**:
+  - Direct integration with developer tools and terminal workflows (Claude Code, Codex, shell scripts).
   - Capri reacts in real-time when commands execute, tools run, builds succeed, or errors happen.
 - **Synthesized Audio Engine**: Direct in-memory WAV audio synthesis for all 14 sound cues (teleports, alerts, fanfare, landing, blips) streamed through `pw-play` (PipeWire), `paplay` (PulseAudio), or `aplay` (ALSA).
 - **All 25 Original Exposure Sheet Acts & FX**:
@@ -78,23 +78,20 @@ cargo run --release
 
 ---
 
-## 🤖 Assistant Integration (Hooks)
+## 🔧 Terminal & Tool Hooks
 
-Capri includes a local async event bridge on `127.0.0.1:47823` that listens for coding events from developer tools and coding agents.
+Capri includes a local async event bridge on `127.0.0.1:47823` that listens for events from terminal tools, build runners, and workflows.
 
 ### Automatic Hook Installation
 
-Capri can auto-configure your installed coding assistants:
+Capri can auto-configure your installed tools:
 
 ```bash
 # For Claude Code (~/.claude/settings.json)
 capri-desktop install-hooks claude
 
-# For OpenAI Codex CLI
+# For Codex CLI
 capri-desktop install-hooks codex
-
-# For Google Antigravity
-capri-desktop install-hooks agy
 ```
 
 To remove configured hooks:

@@ -37,7 +37,6 @@ impl Lines {
     pub fn assistant_display_name(&self) -> &str {
         match self.assistant.as_str() {
             "codex" => "Codex",
-            "agy" => "Antigravity",
             _ => "Claude",
         }
     }
@@ -85,7 +84,7 @@ impl Lines {
             out = out.replace(&format!("{{{k}}}"), v);
         }
 
-        // Adapt assistant name if watching Codex or Antigravity
+        // Adapt target name if watching Codex
         if self.assistant != "claude" {
             let others = get_others_raw();
             if let Some(other) = others.get(&self.assistant) {

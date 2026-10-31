@@ -1,5 +1,5 @@
 // Local HTTP bridge server and CLI hook forwarding.
-// Listens on 127.0.0.1:47823 for Claude Code, Codex, and Antigravity hooks.
+// Listens on 127.0.0.1:47823 for Claude Code, Codex, and terminal hooks.
 
 use serde::{Deserialize, Serialize};
 use serde_json::Value;

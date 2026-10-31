@@ -1,4 +1,4 @@
-// Brain: interprets coding assistant hook events (Claude Code, Codex, Antigravity)
+// Brain: interprets terminal and tool hook events (Claude, Codex, shell)
 // and drives Capri's reactions, dialogues, and stances.
 
 use crate::acting::Player;

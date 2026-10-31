@@ -23,7 +23,7 @@ use std::path::PathBuf;
 
 #[derive(Parser)]
 #[command(name = "capri")]
-#[command(author = "mochiiwuff, david1357")]
+#[command(author = "mochiiwuff, darealdavidd")]
 #[command(version = "0.5.0")]
 #[command(about = "Capri Desktop Mate — Anime Desktop Companion for Linux, Wayland & Tiling WMs", long_about = None)]
 struct Cli {
@@ -33,7 +33,7 @@ struct Cli {
     #[arg(short, long, help = "Language (en, fr, es, pt, ru, auto)")]
     lang: Option<String>,
 
-    #[arg(long, help = "Assistant to follow (claude, codex, agy)")]
+    #[arg(long, help = "Target to follow (claude, codex)")]
     assistant: Option<String>,
 
     #[command(subcommand)]
@@ -42,7 +42,7 @@ struct Cli {
 
 #[derive(Subcommand)]
 enum Commands {
-    #[command(about = "Run hook forwarder for coding assistants (reads stdin, sends to Capri)")]
+    #[command(about = "Run hook forwarder for terminal tools (reads stdin, sends to Capri)")]
     Hook {
         #[arg(default_value = "claude", help = "Assistant name (claude, codex, agy)")]
         assistant: String,
@@ -134,19 +134,7 @@ fn install_hooks_for(assistant: &str) -> Result<(), anyhow::Error> {
             fs::write(hooks_file, serde_json::to_string_pretty(&hook_obj)?)?;
             println!("Installed Codex hooks successfully!");
         }
-        "agy" => {
-            let agy_dir = home_dir().join(".gemini").join("config");
-            fs::create_dir_all(&agy_dir)?;
-            let hooks_file = agy_dir.join("hooks.json");
-            let hook_obj = serde_json::json!({
-                "hooks": {
-                    "all": [{ "command": hook_cmd }]
-                }
-            });
-            fs::write(hooks_file, serde_json::to_string_pretty(&hook_obj)?)?;
-            println!("Installed Antigravity hooks successfully!");
-        }
-        _ => eprintln!("Unknown assistant: {assistant}. Use claude, codex, or agy."),
+        _ => eprintln!("Unknown target: {assistant}. Use claude or codex."),
     }
     Ok(())
 }
@@ -179,14 +167,7 @@ fn uninstall_hooks_for(assistant: &str) -> Result<(), anyhow::Error> {
                 println!("Uninstalled Codex hooks.");
             }
         }
-        "agy" => {
-            let hooks_file = home_dir().join(".gemini").join("config").join("hooks.json");
-            if hooks_file.exists() {
-                let _ = fs::remove_file(hooks_file);
-                println!("Uninstalled Antigravity hooks.");
-            }
-        }
-        _ => eprintln!("Unknown assistant: {assistant}"),
+        _ => eprintln!("Unknown target: {assistant}"),
     }
     Ok(())
 }

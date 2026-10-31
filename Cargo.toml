@@ -2,7 +2,7 @@
 name = "capri-desktop"
 version = "0.5.0"
 edition = "2021"
-authors = ["mochiiwuff", "david1357"]
+authors = ["mochiiwuff", "darealdavidd"]
 description = "Capri Desktop Mate rewritten in Rust for Linux, Wayland & Tiling Window Managers"
 license = "PolyForm-Noncommercial-1.0.0"
 
