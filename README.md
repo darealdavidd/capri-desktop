@@ -1,4 +1,4 @@
-# ✦ Capri Desktop Mate (Rust / Wayland Edition)
+# Capri Desktop Mate (Rust / Wayland Edition)
 
 > A high-performance, Wayland-native Rust rewrite of [Capri Desktop Mate](https://github.com/mochiiwuff/capri-desktop) by **mochiiwuff**, purpose-built for Linux and Tiling Window Managers (Hyprland, Sway, River, etc.) with **zero X11 dependencies**.
 
